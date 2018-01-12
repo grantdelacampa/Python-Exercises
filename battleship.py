@@ -23,6 +23,7 @@ def random_row(board):
 def random_col(board):
   return randint(0, len(board[0]) - 1)
 
+#create the seed for a ship of length>1
 def ship_startLoc(size):
   seedX = random_row(board)
   seedY = random_row(board)
@@ -32,8 +33,13 @@ def ship_startLoc(size):
     seedY = board_size - size
   battle_ship = [seedX, seedY]
   print battle_ship
+  
+#on 0 go X on 1 go Y
+def coin_flip():
+  return randint(0,1)
  
-print "battle_ship: "
+#test cases for the new methods
+print "battle_ship: " + str(coin_flip())
 ship_startLoc(5)
 print "fridgate: " 
 ship_startLoc(3)
@@ -72,15 +78,18 @@ for turn in range(board_size - 1):
       board[guess_row-1][guess_col-1] = "X"
     print_board(board)
     
+    
+#prompt for the remainder of the project
 """Extra Credit
-You can also add on to your Battleship! program to make it more complex and fun to play. Here are some ideas for enhancements—maybe you can think of some more!
+You can also add on to your Battleship! program to make it more complex and fun to play. Here are some ideas for enhancementsmaybe you can think of some more!
 
-Make multiple battleships: you'll need to be careful because you need to make sure that you don’t place battleships on top of each other on the game board. You'll also want to make sure that you balance the size of the board with the number of ships so the game is still challenging and fun to play.
+Make multiple battleships: you'll need to be careful because you need to make sure that you dont place battleships on top of each other on the game board. You'll also want to make sure that you balance the size of the board with the number of ships so the game is still challenging and fun to play.
 
-Make battleships of different sizes: this is trickier than it sounds. All the parts of the battleship need to be vertically or horizontally touching and you’ll need to make sure you don’t accidentally place part of a ship off the side of the board.
+Make battleships of different sizes: this is trickier than it sounds. All the parts of the battleship need to be vertically or horizontally touching and youll need to make sure you dont accidentally place part of a ship off the side of the board.
 
 Make your game a two-player game.
 
 Use functions to allow your game to have more features like rematches, statistics and more!
 
 Some of these options will be easier after we cover loops in the next lesson. Think about coming back to Battleship! after a few more lessons and see what other changes you can make!"""
+    
